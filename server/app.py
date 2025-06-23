@@ -4,6 +4,10 @@ from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
 from config import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
 from models.__init__ import db
+from models.appearance import Appearance
+from models.user import User
+from models.guest import Guest
+from models.episode import Episode
 
 app = Flask(__name__)
 

@@ -1,4 +1,4 @@
-from __init__ import db
+from models.__init__ import db
 from flask import Flask
 
 class Guest(db.Model):
@@ -8,8 +8,10 @@ class Guest(db.Model):
     naame = db.Column(db.String)
     occupation = db.Column(db.String)
     
+    appearances = db.relationship('Appearance', back_populates='guest', cascade='all, delete-orphan')
+    
     def __repr__(self):
-        return f'<Guest {self.id} {self.name}>'
+        return f'<Guest {self.id} {self.name} in {self.occupation}>'
     
       
     
