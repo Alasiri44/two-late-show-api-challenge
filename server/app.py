@@ -22,7 +22,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = SQLALCHEMY_TRACK_MODIFICATIONS
 app.json.compact = False
 
 migrate = Migrate(app, db)
-jwt = JWTManager()
+jwt = JWTManager(app)
 db.init_app(app)
 api = Api(app)
 
@@ -33,17 +33,7 @@ app.register_blueprint(auth_bp)
 
 @app.route('/')
 def index():
-    return f'<h1>Welcome to my header right now</h1>'
-
-class Register(Resource):
-    def post(self):
-        pass
-api.add_resource(Register, '/register')
-
-class Login(Resource):
-    def post(self):
-        pass
-api.add_resource(Login, '/login')
+    return f'<h1>Welcome to The Late Show</h1>'
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
