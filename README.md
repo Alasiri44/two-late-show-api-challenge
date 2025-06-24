@@ -1,5 +1,3 @@
-# two-late-show-api-challenge
-
 # 🌙 Late Show API Challenge
 
 A Flask REST API for managing guests and episodes of a Late Night TV show.
